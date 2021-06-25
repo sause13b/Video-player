@@ -83,8 +83,11 @@
 
                     </ul>
 				</div>
-				<input type="text" id="videoinput">
-                <button type="submit" id="submitbuton" >+</button>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.element }}
+                    <button type="submit" id="submitbuton">+</button>
+                </form>
 			</div>
 		</div>
 
