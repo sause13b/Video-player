@@ -1,18 +1,22 @@
 var arr = []
 var i = 1
+var name
 
 window.onload = function() {
         let url = document.getElementById('videoinput')
         let btn = document.getElementById('submitbuton')
         let list = document.getElementById('list')
         btn.addEventListener('click', function (){
-            let i = 0
             let buf = url.value
-                buf = buf.slice(32);
-                arr.push(buf)
+            $.getJSON('https://noembed.com/embed',
+                {format: 'json', url: buf}, function (data) {
+                name = data.title
+            });
+            buf = buf.slice(32);
                 let li = document.createElement('li');
-                li.textContent = buf;
+                li.textContent = name;
                 list.appendChild(li);
+                arr.push(buf)
                 if(arr.length == 1){
                     player.loadVideoById(buf)
                 }
