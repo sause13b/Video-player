@@ -10,9 +10,8 @@ window.onload = function() {
             li.textContent = url.value;
             list.appendChild(li);
         })
-        for (let i = 0; i < arr.length; i++) {
-
-        }
+        let player = document.getElementById('player')
+        player.src="https://youtu.be/2mb2Y8iYWBs"
 
 
     }
