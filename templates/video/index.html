@@ -45,7 +45,7 @@
 								margin: 10px 32% 10px 10px;
 								padding: 5px;
 								border: 1px solid #333;
-								height: 55%;
+								height: 550px;
 								}
 
 
@@ -55,21 +55,26 @@
 								width: 28%;
 								padding: 5px;
 								margin: 10px 10px 10px 4%;
-								height: 55%;
+								height: 550px;
 								}
 
 			.queue				{
 								margin: 5px;
-								height: 495px;
+								height: 420px;
 								width: auto;
 								border: 1px solid #333;
+                                overflow-y: auto;
 								}
 
 			.button_container	{
 								margin: 10px 5px 5px 5px;
-								height: 90px;
+								height: 70px;
 								width: auto;
 								border: 1px solid #333;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
 								}
 		</style>
 	</head>
@@ -86,17 +91,22 @@
 
                     </ul>
 				</div>
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form.element }}
-                    <button type="submit" id="submitbuton">+</button>
-                </form>
+                <div class = button_container>
+                    <p align = "center" style = "margin: 0;"><b>Введите ссылку на новое видео:</b></p>
+                    <div style = "margin-top: 3px;">
+                        <form method="POST">
+                        {% csrf_token %}
+                        {{ form.element }}
+                        <button type="submit" id="submitbuton">Добавить в очередь</button>
+                    </form>
+                    </div>
+                </div>
 			</div>
 		</div>
 
 		<div class = "left_content">
 			<div style = "height: 600px; width: auto; margin: 5px;">
-                <div class="video" style=" width:420px; height:345px; margin-right: auto; margin-left: auto">
+                <div class="video" style=" width:420px; height:345px; margin-left: 12px;">
                     <main>
                         <div id="player"></div>
                         <script src="http://www.youtube.com/player_api"></script>

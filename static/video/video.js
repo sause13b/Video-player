@@ -37,8 +37,8 @@ window.onload = function() {
     var i = 1
     function onYouTubePlayerAPIReady() {
         player = new YT.Player('player', {
-          height: '390',
-          width: '640',
+          height: '540',
+          width: '960',
           videoId: arr[i],
           events: {
             'onReady': onPlayerReady,
