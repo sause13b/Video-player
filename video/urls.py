@@ -1,6 +1,8 @@
-from .views import video
+from . import views
 from django.urls import path
 
 urlpatterns = [
-    path('', video),
+    path('', views.video, name='video'),
+    path('/clear', views.clear, name='clear'),
+
 ]

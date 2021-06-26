@@ -35,11 +35,13 @@ window.onload = function() {
     }
     var player;
     var i = 1
+
     function onYouTubePlayerAPIReady() {
         player = new YT.Player('player', {
           height: '540',
           width: '960',
           videoId: arr[i],
+          origin: location.hostname,
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange

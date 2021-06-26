@@ -23,3 +23,8 @@ def video(request):
             return redirect('/')
 
     return render(request,'video/index.html', data)
+
+
+def clear(request):
+    video = Queue.objects.all().delete()
+    return redirect('video')

@@ -3,11 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript">
-            var video =  JSON.parse('{{ video | safe }}');
-        </script>
-        <script src="{% static 'video/video.js' %}"></script>
+
 
 		<title>Видеоряд на пятёрку</title>
 
@@ -43,9 +39,10 @@
 
 			.left_content 		{
 								margin: 10px 32% 10px 10px;
-								padding: 5px;
+                                padding: 5px;
 								border: 1px solid #333;
 								height: 550px;
+                                width: 1000px;
 								}
 
 
@@ -97,7 +94,7 @@
 		<div class = "right_content">
 			<div style = "height: 600px; width: auto; margin: 5px;">
                 <div class = "clear_button">
-                    <input type = "submit" value = "Очистить список">
+                    <a href="{% url 'clear' %}">Очистить список</a>
                 </div>
 
 				<div class = "queue">
@@ -118,16 +115,12 @@
 			</div>
 		</div>
 
-		<div class = "left_content">
+		<div id="video_container" class = "left_content">
 			<div style = "height: 600px; width: auto; margin: 5px;">
                 <div class="video" style=" width:420px; height:345px; margin-left: 12px;">
                     <main>
                         <div id="player"></div>
                         <script src="http://www.youtube.com/player_api"></script>
-
-
-
-{#                        <iframe width="420" height="315" id="player" frameborder="0" allowfullscreen></iframe>#}
 
                     </main>
                 </div>
@@ -138,4 +131,9 @@
 			<p>Выполнили: Хлевов Фёдор, Самойленко Павел, Марченко Михаил</p>
 		</footer>
 	</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            var video =  JSON.parse('{{ video | safe }}');
+        </script>
+        <script src="{% static 'video/video.js' %}"></script>
 </html>
