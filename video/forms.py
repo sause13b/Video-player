@@ -8,8 +8,10 @@ class QueueForm(ModelForm):
         model = Queue
         fields = ['element']
         widgets = {
-            "name": TextInput(attrs={
+            "element": TextInput(attrs={
                 "class": 'form-control',
+                "id": 'videoinput'
+
             }),
         }
 

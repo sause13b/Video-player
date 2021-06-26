@@ -4,6 +4,9 @@
 	<head>
 		<meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            var video =  JSON.parse('{{ video | safe }}');
+        </script>
         <script src="{% static 'video/video.js' %}"></script>
 
 		<title>Видеоряд на пятёрку</title>
